@@ -25,11 +25,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   dot: {
-    height: 5,
-    width: 5,
-    borderRadius: 5,
+    height: 10,
+    width: 10,
+    borderRadius: 10,
     marginLeft: 3,
     marginRight: 3,
+  },
+  inactiveDot: {
+    width: 10
+  },
+  activeDot: {
+    width: 25
   },
   dotContainer: {
     height: 60,
@@ -498,7 +504,7 @@ export default class SwiperAnimated extends PureComponent {
         >
           <View
             style={[styles.dot, { backgroundColor: paginationDotColor || '#C5C5C5' },
-              index >= i ? { backgroundColor: paginationActiveDotColor || '#4D4D4E' } : null]}
+              index === i ? [styles.activeDot, { backgroundColor: paginationActiveDotColor || '#4D4D4E' }] : null]}
           />
         </RippleFeedback>,
       );
